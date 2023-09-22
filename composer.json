@@ -1,9 +1,10 @@
 {
     "name": "gizra/robo-translation",
-    "description": "POEditor / translation-related Robo command as PHP trait",
+    "description": "PO-file based translation workflow Robo command as PHP trait",
     "type": "library",
     "require": {
-        "consolidation/robo": "^4.0"
+        "consolidation/robo": "^4.0",
+        "gettext/gettext": "^5.7"
     },
     "autoload": {
         "psr-4": {
