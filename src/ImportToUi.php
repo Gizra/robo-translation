@@ -3,7 +3,6 @@
 namespace GizraRobo;
 
 use Robo\ResultData;
-use RoboComponents\DeploymentTrait;
 
 /**
  * Logic to import translations into Drupal UI translations.
