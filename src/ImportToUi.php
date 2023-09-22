@@ -12,8 +12,6 @@ use RoboComponents\DeploymentTrait;
  */
 trait ImportToUi {
 
-  use DeploymentTrait;
-
   /**
    * Import the interface translations from a PO file.
    *
@@ -36,6 +34,9 @@ trait ImportToUi {
       }
     }
     else {
+      if (!method_exists($this, 'getPantheonNameAndEnv')) {
+        throw new \Exception('You must implement the getPantheonNameAndEnv() method before using it for a non-local environment. See gira/robo-deployment package.');
+      }
       $pantheon_info = $this->getPantheonNameAndEnv();
       $pantheon_terminus_environment = $pantheon_info['name'] . '.' . $env;
       foreach (self::INSTALLED_LANGUAGES as $language) {
